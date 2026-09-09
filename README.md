@@ -18,16 +18,16 @@ Para solucionar esta problemática, se plantea el desarrollo de un sistema compu
 
 * **Objetivo General:** Implementar y comparar tres arquitecturas de Perceptrón Multicapa (MLP) en TensorFlow/Keras para la clasificación automatizada de enfermedades en hojas de tomate a partir del dataset *PlantVillage*.
 * **Objetivos Específicos:**
-1. Construir un pipeline de datos optimizado que aplique filtrado de variante, reescalado de intensidad ($1/255$) y división balanceada ($80/20$).
+1. Construir un pipeline de datos optimizado que aplique filtrado de variante, reescalado de intensidad (1/255) y división balanceada (80/20).
 2. Entrenar y evaluar tres arquitecturas con distinta capacidad vectorial para evidenciar experimentalmente los fenómenos de *Underfitting*, desempaño óptimo y *Overfitting*.
-3. Diagnosticar el impacto del desbalance de clases mediante matrices de confusión y reportes de clasificación ($Precision$, $Recall$, $F1\text{-}Score$).
+3. Diagnosticar el impacto del desbalance de clases mediante matrices de confusión y reportes de clasificación (Precision, Recall, F1-Score).
 
 
 ## 3. Indicadores Clave de Rendimiento (KPIs)
 
-* **KPI 1 (Precisión Global):** Alcanzar una exactitud ($Accuracy$) mayor al 70% en el conjunto de validación sobre el modelo final.
-* **KPI 2 (Detección de Planta Sana):** Obtener un $F1\text{-}Score \ge 0.85$ en la clase `Tomato_healthy` para evitar falsas alarmas y tratamientos innecesarios.
-* **KPI 3 (Cobertura de Clases Escasas):** Lograr un $F1\text{-}Score \ge 0.70$ en patologías minoritarias como `Tomato_mosaic_virus`.
+* **KPI 1 (Precisión Global):** Alcanzar una exactitud (Accuracy) mayor al 70% en el conjunto de validación sobre el modelo final.
+* **KPI 2 (Detección de Planta Sana):** Obtener un F1-Score >= 0.85 en la clase `Tomato_healthy` para evitar falsas alarmas y tratamientos innecesarios.
+* **KPI 3 (Cobertura de Clases Escasas):** Lograr un F1-Score >= 0.70 en patologías minoritarias como `Tomato_mosaic_virus`.
 * **KPI 4 (Eficiencia Operativa):** Mantener un tiempo de inferencia inferior a 100 ms por imagen para permitir diagnósticos en tiempo real.
 
 
@@ -35,7 +35,7 @@ Para solucionar esta problemática, se plantea el desarrollo de un sistema compu
 
 Se utiliza el conjunto de datos público **PlantVillage**, filtrado para conformar una variante exclusiva del cultivo de tomate:
 
-* **Volumen Total:** 16,008 imágenes RGB estandarizadas a $128 \times 128$ píxeles.
+* **Volumen Total:** 16,008 imágenes RGB estandarizadas a 128 x 128 píxeles.
 * **Número de Clases:** 10 categorías (1 sana y 9 patologías).
 * **División de Datos:** 80% entrenamiento (12,806 muestras) y 20% validación (3,202 muestras), fijados con semilla aleatoria `123`.
 
@@ -88,7 +88,7 @@ El análisis del conjunto de entrenamiento evidencia una fuerte disparidad en la
 
 ## 7. Modelado y Entrenamiento
 
-Se evaluaron tres configuraciones de Redes Neuronales Densas (MLP) sobre una entrada aplanada de **49,152 características** ($128 \times 128 \times 3$):
+Se evaluaron tres configuraciones de Redes Neuronales Densas (MLP) sobre una entrada aplanada de **49,152 características** (128 x 128 x 3):
 
 | Modelo | Capas Ocultas | Neuronas por Capa | Parámetros Totales | Comportamiento Esperado |
 | --- | --- | --- | --- | --- |
